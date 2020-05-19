@@ -37,7 +37,8 @@ function preload() {
     for (let i = 0; i < 3; i++) {
         sounds.push(loadSound('../sounds/explosion' + i + '.mp3'));
     }
-    font = loadFont('../assets/SourceSansPro-Regular.otf');
+    // font = loadFont('../assets/SourceSansPro-Regular.otf');
+    font = loadFont('https://github.com/KyleKing/ColinBirthdayCard/blob/master/assets/SourceSansPro-Regular.otf?raw=true');
 }
 
 function setup() {
