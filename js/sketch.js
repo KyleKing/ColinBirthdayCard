@@ -3,6 +3,7 @@
 const SHELL_TYPES = ['simple', 'split', 'burst', 'double',
                      'mega', 'writer', 'pent', 'comet'];
 const GRAVITY = 0.2;
+let font;
 const headerSize = 30;
 const fontSize = 20;
 var PAUSED = true;
@@ -32,16 +33,20 @@ function drawBirthdayText() {
     }
 }
 
+function preload() {
+    for (let i = 0; i < 3; i++) {
+        sounds.push(loadSound('../sounds/explosion' + i + '.mp3'));
+    }
+    font = loadFont('../assets/SourceSansPro-Regular.otf');
+}
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
     background('#212121');
     strokeWeight(1);
     colorMode(HSB);
-    for (let i = 0; i < 3; i++) {
-        sounds.push(loadSound('../sounds/explosion' + i + '.mp3'));
-    }
     // Set text characteristics
-    textFont(loadFont('../assets/SourceSansPro-Regular.otf'));
+    textFont(font);
     textAlign(CENTER, CENTER);
 }
 
@@ -213,7 +218,6 @@ class Star {
         this.burntime++;
     }
 }
-
 
 function touchMoved() {
     touchStarted();
