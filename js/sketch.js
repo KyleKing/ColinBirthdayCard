@@ -3,6 +3,8 @@
 const SHELL_TYPES = ['simple', 'split', 'burst', 'double',
                      'mega', 'writer', 'pent', 'comet'];
 const GRAVITY = 0.2;
+const headerSize = 30;
+const fontSize = 20;
 var PAUSED = true;
 var MUTE = false;
 
@@ -10,14 +12,37 @@ var shells = [];
 var stars  = [];
 var sounds = [];
 
+const lines = [
+    'I hope you have a COVID-free birthday!',
+    "I can't believe it has been almost exactly a year since we",
+    'visited you in SF. I look forward to our call tonight!',
+];
+
+function drawBirthdayText() {
+    fill(255);  // White text
+    let xIndex = 80;
+    textSize(headerSize);
+    text('Happy Birthday Colin!', width * 0.5, xIndex);
+
+    textSize(fontSize);
+    xIndex += fontSize * 3;
+    for (let line of lines) {
+        text(line, width * 0.5, xIndex);
+        xIndex += fontSize + 5;
+    }
+}
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    background(0);
+    background('#212121');
     strokeWeight(1);
     colorMode(HSB);
     for (let i = 0; i < 3; i++) {
         sounds.push(loadSound('../sounds/explosion' + i + '.mp3'));
     }
+    // Set text characteristics
+    textFont(loadFont('../assets/SourceSansPro-Regular.otf'));
+    textAlign(CENTER, CENTER);
 }
 
 /*
@@ -26,8 +51,10 @@ executes the lines of code contained inside its block until the program is
 stopped or noLoop() is called.
 */
 function draw() {
+    background('rgba(30, 30, 30, 0.2)');
+    drawBirthdayText();
+
     translate(width / 2, height);
-    background('rgba(0, 0, 0, 0.2)');
 
     /* Remove the exploded shells and burnt out stars */
     shells = shells.filter(shell => !shell.exploded);
