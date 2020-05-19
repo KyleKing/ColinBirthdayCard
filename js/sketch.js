@@ -14,14 +14,15 @@ var stars  = [];
 var sounds = [];
 
 const lines = [
-    'I hope you have a COVID-free birthday!',
-    "I can't believe it has been almost exactly a year since we",
-    'visited you in SF. I look forward to our call tonight!',
+    "I hope you have a COVID-free birthday!, I can't",
+    'believe it has been almost exactly a year since',
+    'we visited you in SF. I look forward to our call',
+    'tonight! Happy Birthday!',
 ];
 
 function drawBirthdayText() {
-    fill(255);  // White text
-    let xIndex = 80;
+    fill('#FFF');
+    let xIndex = 120;
     textSize(headerSize);
     text('Happy Birthday Colin!', width * 0.5, xIndex);
 
@@ -37,8 +38,7 @@ function preload() {
     for (let i = 0; i < 3; i++) {
         sounds.push(loadSound('../sounds/explosion' + i + '.mp3'));
     }
-    // font = loadFont('../assets/SourceSansPro-Regular.otf');
-    font = loadFont('https://github.com/KyleKing/ColinBirthdayCard/blob/master/assets/SourceSansPro-Regular.otf?raw=true');
+    font = loadFont('assets/SourceSansPro-Regular.otf');
 }
 
 function setup() {
