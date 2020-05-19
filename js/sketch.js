@@ -36,7 +36,7 @@ function drawBirthdayText() {
 
 function preload() {
     for (let i = 0; i < 3; i++) {
-        sounds.push(loadSound('../sounds/explosion' + i + '.mp3'));
+        sounds.push(loadSound('sounds/explosion' + i + '.mp3'));
     }
     font = loadFont('assets/SourceSansPro-Regular.otf');
 }
