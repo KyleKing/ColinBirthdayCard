@@ -4,8 +4,8 @@ const SHELL_TYPES = ['simple', 'split', 'burst', 'double',
                      'mega', 'writer', 'pent', 'comet'];
 const GRAVITY = 0.2;
 let font;
-const headerSize = 30;
-const fontSize = 20;
+const headerSize = 80;
+const fontSize = 40;
 var PAUSED = true;
 var MUTE = false;
 
